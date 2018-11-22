@@ -885,10 +885,11 @@ class SalesInvoice(SellingController):
 					"party_type": "Customer",
 					"party": self.customer,
 					"against": self.write_off_account,
-					"credit": self.base_write_off_amount,
-					"credit_in_account_currency": self.base_write_off_amount \
-						if self.party_account_currency==self.company_currency else self.write_off_amount,
-					"against_voucher": self.return_against if cint(self.is_return) and self.return_against else self.name,
+					"credit": flt(self.base_write_off_amount, self.precision("base_write_off_amount")),
+					"credit_in_account_currency": (flt(self.base_write_off_amount,
+						self.precision("base_write_off_amount")) if self.party_account_currency==self.company_currency
+						else flt(self.write_off_amount, self.precision("write_off_amount"))),
+					"against_voucher": self.return_against if cint(self.is_return) else self.name,
 					"against_voucher_type": self.doctype,
 					"cost_center": self.cost_center
 				}, self.party_account_currency)
@@ -897,9 +898,10 @@ class SalesInvoice(SellingController):
 				self.get_gl_dict({
 					"account": self.write_off_account,
 					"against": self.customer,
-					"debit": self.base_write_off_amount,
-					"debit_in_account_currency": self.base_write_off_amount \
-						if write_off_account_currency==self.company_currency else self.write_off_amount,
+					"debit": flt(self.base_write_off_amount, self.precision("base_write_off_amount")),
+					"debit_in_account_currency": (flt(self.base_write_off_amount,
+						self.precision("base_write_off_amount")) if write_off_account_currency==self.company_currency
+						else flt(self.write_off_amount, self.precision("write_off_amount"))),
 					"cost_center": self.cost_center or self.write_off_cost_center or default_cost_center
 				}, write_off_account_currency)
 			)
@@ -913,8 +915,10 @@ class SalesInvoice(SellingController):
 				self.get_gl_dict({
 					"account": round_off_account,
 					"against": self.customer,
-					"credit_in_account_currency": self.base_rounding_adjustment,
-					"credit": self.base_rounding_adjustment,
+					"credit_in_account_currency": flt(self.rounding_adjustment,
+						self.precision("rounding_adjustment")),
+					"credit": flt(self.base_rounding_adjustment,
+						self.precision("base_rounding_adjustment")),
 					"cost_center": self.cost_center or round_off_cost_center,
 				}
 			))
