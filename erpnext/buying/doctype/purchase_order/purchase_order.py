@@ -485,3 +485,11 @@ def update_status(status, name):
 	po = frappe.get_doc("Purchase Order", name)
 	po.update_status(status)
 	po.update_delivered_qty_in_sales_order()
+
+@frappe.whitelist()
+def get_uom_form_item_master(doctype, txt, searchfield, start, page_len, filters):
+	data = frappe.get_doc("Item", txt)
+	uom_names = []
+	for uom in data.uoms:
+		uom_names.append((uom.uom,))
+	return uom_names

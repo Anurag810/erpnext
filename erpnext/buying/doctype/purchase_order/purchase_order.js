@@ -57,6 +57,16 @@ frappe.ui.form.on("Purchase Order", {
 		erpnext.queries.setup_queries(frm, "Warehouse", function() {
 			return erpnext.queries.warehouse(frm.doc);
 		});
+
+		frm.set_query("uom", "items", function(frm, cdt, cdn) {
+			window.x = frm
+			const row = frappe.get_doc(cdt, cdn)
+			console.log(row.item_code)
+			return {
+				query: "erpnext.buying.doctype.purchase_order.purchase_order.get_uom_form_item_master",
+				txt: row.item_code
+			}
+		});
 	}
 });
 
@@ -70,6 +80,9 @@ frappe.ui.form.on("Purchase Order Item", {
 				set_schedule_date(frm);
 			}
 		}
+	},
+	items() {
+
 	}
 });
 
