@@ -80,9 +80,6 @@ frappe.ui.form.on("Purchase Order Item", {
 				set_schedule_date(frm);
 			}
 		}
-	},
-	items() {
-
 	}
 });
 
