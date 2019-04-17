@@ -1,5 +1,6 @@
 {
     "country_code": "et",
+    "default": 1,
     "name": "Ethiopia - Chart of Accounts",
     "tree": {
         "ASSETS": {

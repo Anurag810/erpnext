@@ -1,5 +1,6 @@
 {
     "country_code": "co",
+    "default": 1,
     "name": "Colombia - Unique Account Chart - PUC",
     "tree": {
         "ACTIVO": {

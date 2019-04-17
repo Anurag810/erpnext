@@ -1,5 +1,6 @@
 {
     "country_code": "be",
+    "default": 1,
     "name": "Belgian - PCMN",
     "tree": {
         "CLASSE 1": {

@@ -121,6 +121,11 @@ def get_charts_for_country(country, with_standard=False):
 			if (content and content.get("disabled", "No") == "No") \
 				or frappe.local.flags.allow_unverified_charts:
 					charts.append(content["name"])
+					if content['default'] == 0:
+						return "Standard with Numbers"
+					else:
+						return content["name"]
+
 
 	country_code = frappe.db.get_value("Country", country, "code")
 	if country_code:
@@ -137,13 +142,13 @@ def get_charts_for_country(country, with_standard=False):
 				fname = frappe.as_unicode(fname)
 				if (fname.startswith(country_code) or fname.startswith(country)) and fname.endswith(".json"):
 					with open(os.path.join(path, fname), "r") as f:
-						_get_chart_name(f.read())
+						default = _get_chart_name(f.read())
 
 	# if more than one charts, returned then add the standard
 	if len(charts) != 1 or with_standard:
 		charts += ["Standard", "Standard with Numbers"]
 
-	return charts
+	return [charts, default]
 
 
 def get_account_tree_from_existing_company(existing_company):

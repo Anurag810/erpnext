@@ -1,5 +1,6 @@
 {
     "country_code": "ro",
+    "default": 1,
     "name": "Romania - Chart of Accounts",
     "tree": {
         "CONTURI FINANCIARE": {

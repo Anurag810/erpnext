@@ -1,5 +1,6 @@
 {
     "country_code": "de",
+    "default": 1,
     "name": "Germany - Kontenplan SKR03",
     "tree": {
         "Aktiva": {

@@ -1,5 +1,6 @@
 {
     "country_code": "syscohada",
+    "default": 1,
     "name": "Syscohada - Plan de compte",
     "tree": {
         "Comptes de bilan": {

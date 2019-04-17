@@ -1,5 +1,6 @@
 {
     "country_code": "at",
+    "default": 1,
     "name": "Austria - Chart of Accounts",
     "tree": {
         "Summe Abschreibungen und Aufwendungen": {

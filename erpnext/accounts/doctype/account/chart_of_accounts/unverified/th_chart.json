@@ -1,5 +1,6 @@
 {
     "country_code": "th",
+    "default": 1,
     "name": "Thailand - Chart of Accounts",
     "tree": {
         "Assets": {

@@ -1,5 +1,6 @@
 {
 	"country_code": "sg",
+    "default": 1,
 	"name": "Singapore - F&B Chart of Accounts",
 	"tree": {
 		"Assets": {

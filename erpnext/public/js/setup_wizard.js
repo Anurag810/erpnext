@@ -218,7 +218,7 @@ erpnext.setup.slides_settings = [
 					callback: function (r) {
 						if (r.message) {
 							slide.get_input("chart_of_accounts").empty()
-								.add_options(r.message);
+								.add_options(r.message[0]);
 						}
 					}
 				})

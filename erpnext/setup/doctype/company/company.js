@@ -164,9 +164,13 @@ erpnext.company.set_chart_of_accounts_options = function(doc) {
 			},
 			callback: function(r) {
 				if(!r.exc) {
-					set_field_options("chart_of_accounts", [""].concat(r.message).join("\n"));
+					console.log(r.message)
+					set_field_options("chart_of_accounts", [""].concat(r.message[0]).join("\n"));
 					if(in_list(r.message, selected_value))
 						cur_frm.set_value("chart_of_accounts", selected_value);
+					if(r.message[1])
+						console.log("i am in")
+						cur_frm.set_value("chart_of_accounts", r.message[1])
 				}
 			}
 		})

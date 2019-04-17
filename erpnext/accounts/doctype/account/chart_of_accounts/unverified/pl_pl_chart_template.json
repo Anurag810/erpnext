@@ -1,5 +1,6 @@
 {
     "country_code": "pl",
+    "default": 1,
     "name": "Poland - Plan kont",
     "tree": {
         "Aktywa Trwa\u0142e": {

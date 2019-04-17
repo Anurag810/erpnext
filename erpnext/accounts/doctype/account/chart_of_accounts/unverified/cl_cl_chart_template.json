@@ -1,5 +1,6 @@
 {
     "country_code": "cl",
+    "default": 1,
     "name": "Chile - Plan de Cuentas",
     "tree": {
         "Cuentas de Movimiento": {

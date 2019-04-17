@@ -1,5 +1,6 @@
 {
     "country_code": "in",
+    "default": 1,
     "name": "India - Chart of Accounts",
     "tree": {
         "Application of Funds (Assets)": {

@@ -1,5 +1,6 @@
 {
     "country_code": "pe",
+    "default": 1,
     "name": "Peru - Plan de Cuentas",
     "tree": {
         "Cuentas de Balance": {

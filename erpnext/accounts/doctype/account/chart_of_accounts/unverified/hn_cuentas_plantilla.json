@@ -1,5 +1,6 @@
 {
     "country_code": "hn",
+    "default": 1,
     "name": "Honduras - Plantilla de cuentas de",
     "tree": {
         "Activo": {

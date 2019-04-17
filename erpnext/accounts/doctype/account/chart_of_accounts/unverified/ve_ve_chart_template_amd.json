@@ -1,5 +1,6 @@
 {
     "country_code": "ve",
+    "default": 1,
     "name": "Venezuelan - Chart of Accounts",
     "tree": {
         "ACTIVO": {

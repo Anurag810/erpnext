@@ -1,5 +1,6 @@
 {
     "country_code": "pa",
+    "default": 1,
     "name": "Panama - Plan de Cuentas",
     "tree": {
         "ACTIVOS": {

@@ -1,5 +1,6 @@
 {
     "country_code": "pt",
+    "default": 1,
     "name": "Portugal - Template do Plano de Contas SNC",
     "tree": {
         "Capital, reservas e resultados transitados": {

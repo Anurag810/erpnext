@@ -1,5 +1,6 @@
 {
     "country_code": "ch",
+    "default": 1,
     "name": "Switzerland - Plan comptable STERCHI",
     "tree": {
         "Actif": {

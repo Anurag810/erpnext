@@ -1,5 +1,6 @@
 {
     "country_code": "cr",
+    "default": 1,
     "name": "Costa Rica - Chart of Accounts 1",
     "tree": {
         "0-Activo": {

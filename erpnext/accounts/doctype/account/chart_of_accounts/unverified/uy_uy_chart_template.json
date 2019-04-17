@@ -1,5 +1,6 @@
 {
     "country_code": "uy",
+    "default": 1,
     "name": "Uruguay - Plan de Cuentas",
     "tree": {
         "ACTIVO": {
