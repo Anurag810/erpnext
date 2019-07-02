@@ -79,7 +79,7 @@ erpnext.integrations.plaidLink = class plaidLink {
 	}
 
 	onScriptError(error) {
-		frappe.msgprint('There was an issue loading the link-initialize.js script');
+		frappe.msgprint(__('There was an issue loading the link-initialize.js script'));
 		frappe.msgprint(error);
 	}
 
