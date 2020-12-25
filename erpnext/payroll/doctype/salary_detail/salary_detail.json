@@ -11,6 +11,7 @@
   "amount",
   "section_break_5",
   "additional_salary",
+  "is_recurring_additional_salary",
   "statistical_component",
   "depends_on_payment_days",
   "exempted_from_income_tax",
@@ -226,11 +227,19 @@
   {
    "fieldname": "column_break_24",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.parenttype=='Salary Slip' && doc.parentfield=='earnings' && doc.additional_salary",
+   "fieldname": "is_recurring_additional_salary",
+   "fieldtype": "Check",
+   "label": "Is Recurring Additional Salary",
+   "read_only": 1
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2020-11-25 13:12:41.081106",
+ "modified": "2020-12-24 16:29:40.266372",
  "modified_by": "Administrator",
  "module": "Payroll",
  "name": "Salary Detail",

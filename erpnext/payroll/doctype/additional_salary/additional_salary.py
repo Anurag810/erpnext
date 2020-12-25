@@ -92,7 +92,8 @@ class AdditionalSalary(Document):
 @frappe.whitelist()
 def get_additional_salary_component(employee, start_date, end_date, component_type):
 	additional_salaries = frappe.db.sql("""
-		select name, salary_component, type, amount, overwrite_salary_structure_amount, deduct_full_tax_on_selected_payroll_date
+		select name, salary_component, type, amount, overwrite_salary_structure_amount,
+		deduct_full_tax_on_selected_payroll_date, is_recurring
 		from `tabAdditional Salary`
 		where employee=%(employee)s
 			and docstatus = 1
@@ -140,6 +141,7 @@ def get_additional_salary_component(employee, start_date, end_date, component_ty
 				'amount': d.amount,
 				'type': d.type,
 				'overwrite': d.overwrite_salary_structure_amount,
+				'is_recurring': d.is_recurring
 			})
 
 		existing_salary_components.append(d.salary_component)
